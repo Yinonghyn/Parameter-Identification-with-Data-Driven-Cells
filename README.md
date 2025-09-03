@@ -8,4 +8,10 @@ This repository contains Python code based on our work *NAME*
   - `Comparison with Pointwise and SINDy`: Visual comparison of our method with the pointwise method and SINDy in a noisy environment.
   - `Error Computation`: Numerical comparison of our method and the pointwise method.
 - `Sea Surface Temperature`: This folder contains the application of our method to the NOAA SST Dataset.
-  - `SST.ipynb`: This notebook contains POD time series prediction, prediction of our method given the noisy POD coefficients, and comparison with the pointwise method. 
+  - `SST.ipynb`: This notebook contains POD time series prediction, prediction of our method given the noisy POD coefficients, and comparison with the pointwise method.
+
+The following illustrates the evolution of the sea surface temperature predicted with our method and the pointwise method compared with the ground truth.
+![comparison](https://github.com/user-attachments/assets/bca26231-0d3e-4529-9605-f105a0974233)
+
+The following illustrates the absolute errors over time of our method and the pointwise method.
+![Absolute Difference](https://github.com/user-attachments/assets/b1d1bc13-cd0d-46a0-935f-b3caa96194a8)
