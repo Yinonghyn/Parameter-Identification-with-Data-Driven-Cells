@@ -11,7 +11,9 @@ This repository contains Python code based on our work *NAME*
   - `SST.ipynb`: This notebook contains POD time series prediction, prediction of our method given the noisy POD coefficients, and comparison with the pointwise method.
 
 The following illustrates the evolution of the sea surface temperature predicted with our method and the pointwise method compared with the ground truth.
-![comparison](https://github.com/user-attachments/assets/bca26231-0d3e-4529-9605-f105a0974233)
+![comparison](https://github.com/user-attachments/assets/07163d69-cb96-45ba-8ba1-701cdb7fded6)
+
 
 The following illustrates the absolute errors over time of our method and the pointwise method.
-![Absolute Difference](https://github.com/user-attachments/assets/b1d1bc13-cd0d-46a0-935f-b3caa96194a8)
+![Absolute Difference](https://github.com/user-attachments/assets/63546bd2-030d-430e-870d-96b2e56c6138)
+
