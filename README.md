@@ -1,6 +1,6 @@
 # Parameter-Identification-with-Data-Driven-Cells
 
-This repository contains Python code based on our work *NAME*
+This repository contains Python code based on our work *Data-Adaptive Meshes for Learning Dynamical Systems: Matching Transition Matrices and Invariant Measures*
 
 - `weight_Lorenz63.ipynb`: This file contains visualizations of weights and modified Ulam matrices.
 - `Synthetic Experiments`: This folder contains the codes of our synthetic experiments on clean and noisy Lorenz-63 and Lorenz-96 systems.
