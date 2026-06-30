@@ -36,8 +36,8 @@ states_train = states
 
 #Experiment parameters
 ######################
-subset_size = 40
-slope = 1  #0.005
+subset_size = 30
+slope = 0.5  #0.005
 epsilon = 1e-4 #teleportation
 dt = 0.01
 percent = 0.005
@@ -139,7 +139,7 @@ U_true_np = U_true.detach().cpu().numpy()
 
 
 #### Initialize network
-torch.manual_seed(12345)
+torch.manual_seed(123456)
 net1 = nn.Sequential(
             nn.Linear(4, 100),
             nn.Tanh(),
@@ -200,7 +200,7 @@ for i in range(N_iters):
         
         
 
-torch.manual_seed(12345)
+torch.manual_seed(123456)
 net2 = nn.Sequential(
             nn.Linear(4, 100),
             nn.Tanh(),
@@ -321,7 +321,10 @@ for i, ax in enumerate(axes):
     ax.plot(predicted_coeffs[:50, coeff_idx], ".-", label="Matrix Matching")
     ax.plot(predicted_coeffs2[:50, coeff_idx], ".-", label="Measure Matching")
     ax.set_ylabel(ylabels[i])
-    # ax.set_ylim(coeffs[:,coeff_idx].min()-10,coeffs[:,coeff_idx].max()+10)
+    if i == 0:
+        ax.set_ylim(coeffs[:,coeff_idx].min()-400,coeffs[:,coeff_idx].max()+400)
+    if i == 1 or i == 2:
+        ax.set_ylim(coeffs[:,coeff_idx].min()-200,coeffs[:,coeff_idx].max()+200)
     if i == 0:
         ax.legend(loc="best")
 
@@ -342,14 +345,14 @@ fig, axes = plt.subplots(1, 2, figsize=(10, 4), dpi=300,
 im1 = axes[0].imshow(np.mean(abs(remapped - remapped1), axis=0),
                      origin='lower',  extent=extent,vmin=0, vmax=np.max(np.mean(abs(remapped - remapped2), axis=0))/2,cmap='plasma')
 axes[0].set_title("Markov Matrix Matching")#XXX Matching
-axes[0].set_xlabel("Longtitude")
+axes[0].set_xlabel("Longitude")
 axes[0].set_ylabel("Latitude")
 
 # Second image
 im2 = axes[1].imshow(np.mean(abs(remapped - remapped2), axis=0),
                      origin='lower',  extent=extent,vmin=0, vmax=np.max(np.mean(abs(remapped - remapped2), axis=0))/2,cmap='plasma')
 axes[1].set_title("Invariant Measure Matching")
-axes[1].set_xlabel("Longtitude")
+axes[1].set_xlabel("Longitude")
 #axes[1].set_ylabel("Latitude")
 
 # Add an axis for the colorbar beside the last plot
