@@ -12,7 +12,7 @@ This repository contains Python code based on our work *Data-Adaptive Meshes for
 
 <!--
 The following illustrates the evolution of the sea surface temperature predicted with our method and the pointwise method compared with the ground truth.
-![comparison](https://github.com/user-attachments/assets/07163d69-cb96-45ba-8ba1-701cdb7fded6)
+####![comparison](https://github.com/user-attachments/assets/07163d69-cb96-45ba-8ba1-701cdb7fded6)
 
 
 The following illustrates the absolute errors over time of our method and the pointwise method.
