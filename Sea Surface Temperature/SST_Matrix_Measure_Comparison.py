@@ -36,9 +36,9 @@ states_train = states
 
 #Experiment parameters
 ######################
-subset_size = 50
-slope = 1   #0.005
-steps = 5
+subset_size = 60
+slope = 0.5   #0.005
+steps = 10
 epsilon = 1e-4 #teleportation
 dt = 0.01
 percent = 0.005
@@ -141,7 +141,7 @@ U_true_np = U_true.detach().cpu().numpy()
 
 
 #### Initialize network
-torch.manual_seed(1235)
+torch.manual_seed(4123)
 net1 = nn.Sequential(
             nn.Linear(4, 100),
             nn.Tanh(),
@@ -204,11 +204,9 @@ for i in range(N_iters):
         
         
 
-torch.manual_seed(1235)
+torch.manual_seed(4123)
 net2 = nn.Sequential(
             nn.Linear(4, 100),
-            nn.Tanh(),
-            nn.Linear(100, 100),
             nn.Tanh(),
             nn.Linear(100, 100),
             nn.Tanh(),
