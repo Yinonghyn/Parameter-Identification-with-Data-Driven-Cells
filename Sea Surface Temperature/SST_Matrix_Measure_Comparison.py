@@ -36,15 +36,13 @@ states_train = states
 
 #Experiment parameters
 ######################
-subset_size = 60
-slope = 0.5   #0.005
-steps = 10
+subset_size = 40
+slope = 1  #0.005
 epsilon = 1e-4 #teleportation
 dt = 0.01
 percent = 0.005
-sample_size = 400
+sample_size = 448
 nstep = 5
-
 ############### Form POD for dimension reduction of full state which has dimension ~45,000.
 Nmodes = 4 #number of POD modes (this is the state dimension we perform estimation in)
 
@@ -95,10 +93,10 @@ plt.show()
 plt.title('POD Reduced')
 plt.imshow(remapped[235],origin = 'lower') 
 
-trajectory = coeffs 
+trajectory = coeffs
 
 scaler = StandardScaler()
-scaled_coeffs = scaler.fit_transform(trajectory)  
+scaled_coeffs = scaler.fit_transform(trajectory) 
 
 # Select training points
 randpts = scaled_coeffs[:sample_size]
@@ -141,11 +139,9 @@ U_true_np = U_true.detach().cpu().numpy()
 
 
 #### Initialize network
-torch.manual_seed(4123)
+torch.manual_seed(12345)
 net1 = nn.Sequential(
             nn.Linear(4, 100),
-            nn.Tanh(),
-            nn.Linear(100, 100),
             nn.Tanh(),
             nn.Linear(100, 100),
             nn.Tanh(),
@@ -204,7 +200,7 @@ for i in range(N_iters):
         
         
 
-torch.manual_seed(4123)
+torch.manual_seed(12345)
 net2 = nn.Sequential(
             nn.Linear(4, 100),
             nn.Tanh(),
@@ -329,7 +325,7 @@ for i, ax in enumerate(axes):
     if i == 0:
         ax.legend(loc="best")
 
-axes[-1].set_xlabel("Month(t)")
+axes[-1].set_xlabel("Month (t)")
 
 plt.tight_layout()
 plt.show()
@@ -344,14 +340,14 @@ fig, axes = plt.subplots(1, 2, figsize=(10, 4), dpi=300,
 
 # First image
 im1 = axes[0].imshow(np.mean(abs(remapped - remapped1), axis=0),
-                     origin='lower',  extent=extent,vmin=0, vmax=np.max(np.mean(abs(remapped - remapped1), axis=0)),cmap='plasma')
+                     origin='lower',  extent=extent,vmin=0, vmax=np.max(np.mean(abs(remapped - remapped2), axis=0))/2,cmap='plasma')
 axes[0].set_title("Markov Matrix Matching")#XXX Matching
 axes[0].set_xlabel("Longtitude")
 axes[0].set_ylabel("Latitude")
 
 # Second image
 im2 = axes[1].imshow(np.mean(abs(remapped - remapped2), axis=0),
-                     origin='lower',  extent=extent,vmin=0, vmax=np.max(np.mean(abs(remapped - remapped1), axis=0)),cmap='plasma')
+                     origin='lower',  extent=extent,vmin=0, vmax=np.max(np.mean(abs(remapped - remapped2), axis=0))/2,cmap='plasma')
 axes[1].set_title("Invariant Measure Matching")
 axes[1].set_xlabel("Longtitude")
 #axes[1].set_ylabel("Latitude")
