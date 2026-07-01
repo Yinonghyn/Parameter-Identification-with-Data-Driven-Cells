@@ -8,5 +8,5 @@ This repository contains Python code based on our work *Data-Adaptive Learning o
   - `Comparison with Pointwise and SINDy`: Visual comparison of our method with the pointwise method and SINDy in a noisy environment.
   - `Error Computation`: Numerical comparison of our method and the pointwise method.
 - `Sea Surface Temperature`: This folder contains the application of our method to the NOAA SST Dataset.
-  - `SST-test.ipynb`: This notebook contains POD time series prediction, prediction of our method given the noisy POD coefficients, and comparison with the pointwise method.
-  - `SST_Matrix_Measure_Comparison.py`: This file predicts the SST evolution using the Markov matrix matching and invariant measure matching objectives. 
+  - `SST_Matrix_Measure_Comparison.py`: This file predicts the SST evolution using the Markov matrix matching and invariant measure matching objectives.
+  #- `SST-test.ipynb`: This notebook contains POD time series prediction, prediction of our method given the noisy POD coefficients, and comparison with the pointwise method.
