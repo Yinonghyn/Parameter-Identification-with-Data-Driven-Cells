@@ -1,3 +1,4 @@
+
 # Parameter-Identification-with-Data-Driven-Cells
 
 This repository contains Python code based on our work *Data-Adaptive Learning of Dynamical Systems by Matching Transfer Operators and Invariant Measures*.
@@ -10,3 +11,4 @@ This repository contains Python code based on our work *Data-Adaptive Learning o
 - `Sea Surface Temperature`: This folder contains the application of our method to the NOAA SST Dataset.
   - `SST_Matrix_Measure_Comparison.py`: This file predicts the SST evolution using the Markov matrix matching and invariant measure matching objectives.
   #- `SST-test.ipynb`: This notebook contains POD time series prediction, prediction of our method given the noisy POD coefficients, and comparison with the pointwise method.
+<img width="2400" height="1200" alt="comparison" src="https://github.com/user-attachments/assets/001afb3a-7f9c-48d6-bc7f-38e97ed1419d" />
